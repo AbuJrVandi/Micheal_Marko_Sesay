@@ -10,7 +10,7 @@
  */
 window.emailJsConfig = Object.freeze({
   publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
-  serviceId: "YOUR_EMAILJS_SERVICE_ID",
+  serviceId: "service_g71pji9",
   templateId: "YOUR_EMAILJS_TEMPLATE_ID",
   recipientEmail: "sesay.michael@students.jkuat.ac.ke"
 });
