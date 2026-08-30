@@ -29,6 +29,8 @@ a { color: var(--link); }
 .theme-toggle { display: inline-flex; align-items: center; gap: 7px; margin-left: 10px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 5px; color: var(--nav-ink); background: transparent; font: inherit; font-size: 13px; font-weight: 600; line-height: 20px; white-space: nowrap; cursor: pointer; transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
 .theme-toggle:hover, .theme-toggle:focus-visible { border-color: var(--green); color: var(--green-dark); background: var(--nav-hover); outline: none; }
 .theme-toggle > span:first-child { font-size: 17px; line-height: 1; }
+.mobile-menu-toggle { display: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .more-menu { position: relative; }
 .more-links { position: absolute; top: 36px; right: 0; display: none; width: 250px; padding: 4px 0; background: #fff; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 1px 5px #0002; }
 .more-links.open { display: block; }
@@ -155,7 +157,20 @@ html[data-theme="dark"] .form-status[data-state="pending"] { color: #c6d6c6; }
   .form-field-full { grid-column: auto; }
 }
 @media (max-width: 860px) { .theme-toggle-text { display: none; } .theme-toggle { padding: 8px 9px; } }
-@media (max-width: 620px) { .desktop-nav { display: none; } .theme-toggle { margin-left: auto; } }
+@media (max-width: 620px) {
+  .header-inner { padding: 0 18px; }
+  .site-title { font-size: 18px; }
+  .site-title::before { width: 7px; height: 7px; margin-right: 8px; }
+  .desktop-nav { display: none; }
+  .desktop-nav.mobile-menu-open { position: fixed; top: 88px; right: 16px; left: 16px; z-index: 11; display: grid; gap: 4px; margin: 0; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--header-bg); box-shadow: 0 14px 30px #111d1426; }
+  .desktop-nav.mobile-menu-open > a { padding: 12px 14px; border-radius: 5px; font-size: 15px; text-align: left; }
+  .theme-toggle { margin-left: auto; }
+  .mobile-menu-toggle { display: inline-grid; width: 38px; height: 38px; margin-left: 8px; padding: 0; place-items: center; border: 1px solid var(--border); border-radius: 5px; color: var(--nav-ink); background: transparent; cursor: pointer; }
+  .mobile-menu-toggle:hover, .mobile-menu-toggle:focus-visible { border-color: var(--green); background: var(--nav-hover); outline: none; }
+  .menu-icon { display: grid; gap: 4px; width: 17px; }
+  .menu-icon i { display: block; width: 100%; height: 2px; border-radius: 2px; background: currentcolor; }
+  body.mobile-menu-open { overflow: hidden; }
+}
 
 /* Homepage — bespoke research portfolio layout */
 .home-page { background: #fff; color: #1c1c25; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.45; }
