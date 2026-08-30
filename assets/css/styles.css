@@ -21,7 +21,6 @@ a { color: var(--link); }
 .site-header { position: fixed; z-index: 10; top: 0; right: 0; left: 0; height: 74px; border-bottom: 1px solid var(--border); background: var(--header-bg); box-shadow: 0 2px 14px #17221812; backdrop-filter: blur(12px); }
 .header-inner { display: flex; align-items: center; max-width: 1120px; height: 100%; margin: auto; padding: 0 28px; }
 .site-title { color: var(--ink); font-size: 20px; font-weight: 700; letter-spacing: -.2px; line-height: 32px; text-decoration: none; white-space: nowrap; }
-.site-title::before { display: inline-block; width: 8px; height: 8px; margin: 0 10px 1px 0; border-radius: 50%; background: var(--green); content: ""; }
 .desktop-nav { display: flex; align-items: center; gap: 3px; margin-left: auto; }
 .desktop-nav > a, .more-button { display: block; padding: 9px 13px; border: 0; border-radius: 5px; background: transparent; color: var(--nav-ink); font: inherit; font-size: 14px; font-weight: 600; line-height: 20px; text-decoration: none; white-space: nowrap; cursor: pointer; transition: color .18s ease, background-color .18s ease, box-shadow .18s ease; }
 .desktop-nav > a:hover, .desktop-nav > a:focus-visible, .more-button:hover, .more-button:focus-visible { color: var(--green-dark); background: var(--nav-hover); outline: none; }
@@ -128,7 +127,6 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="dark"] .site-header { box-shadow: 0 2px 16px #0008; }
-html[data-theme="dark"] .site-title::before { box-shadow: 0 0 0 4px #91bd6926; }
 html[data-theme="dark"] .desktop-nav > a[aria-current="page"] { color: #122015; background: var(--green); box-shadow: none; }
 html[data-theme="dark"] .desktop-nav > a:hover, html[data-theme="dark"] .desktop-nav > a:focus-visible, html[data-theme="dark"] .more-button:hover, html[data-theme="dark"] .more-button:focus-visible, html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .theme-toggle:focus-visible { color: #eff8ed; }
 html[data-theme="dark"] .more-links { border-color: var(--border); background: var(--surface); box-shadow: 0 10px 24px #0008; }
@@ -166,7 +164,6 @@ html[data-theme="dark"] .form-status[data-state="pending"] { color: #c6d6c6; }
 @media (max-width: 620px) {
   .header-inner { padding: 0 18px; }
   .site-title { font-size: 18px; }
-  .site-title::before { width: 7px; height: 7px; margin-right: 8px; }
   .desktop-nav { display: none; }
   .desktop-nav.mobile-menu-open { position: fixed; top: 88px; right: 16px; left: 16px; z-index: 11; display: grid; gap: 4px; margin: 0; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--header-bg); box-shadow: 0 14px 30px #111d1426; }
   .desktop-nav.mobile-menu-open > a { padding: 12px 14px; border-radius: 5px; font-size: 15px; text-align: left; }
