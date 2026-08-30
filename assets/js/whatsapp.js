@@ -3,7 +3,20 @@
     if (document.querySelector(".whatsapp-contact")) return;
 
     const contact = document.createElement("a");
-    const message = "Hello Michael, I would like to discuss a consultation.";
+    const pageUrl = window.location.href;
+    const profilePhotoPath = window.location.pathname.includes("/pages/")
+      ? "../assets/images/michael-marko-sesay.jpeg"
+      : "assets/images/michael-marko-sesay.jpeg";
+    const profilePhotoUrl = new URL(profilePhotoPath, pageUrl).href;
+    const message = [
+      "Hello Michael,",
+      "",
+      "I am contacting you through your portfolio website.",
+      `Page: ${pageUrl}`,
+      `Profile: ${profilePhotoUrl}`,
+      "",
+      "I would like to discuss a consultation."
+    ].join("\n");
 
     contact.className = "whatsapp-contact";
     contact.href = `https://wa.me/23231465456?text=${encodeURIComponent(message)}`;
